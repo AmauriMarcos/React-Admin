@@ -1,0 +1,13 @@
+$base-color: #21B6D0;
+
+@mixin reset-list{
+    margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@mixin center-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

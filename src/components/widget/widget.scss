@@ -1,0 +1,57 @@
+@import "../../styles/global.scss";
+
+.widget{
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+    padding: 10px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    border-radius: 10px;
+    height: 160px;
+
+
+    .left, .right{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .title{
+            font-weight: bold;
+            font-size: 18px;
+            color: gray;
+            text-transform: uppercase;
+        }
+
+        .counter{
+            font-size: 35px;
+            font-weight: 300;
+        }
+
+        .link{
+            font-size: 15px;
+            border-bottom: 1px solid gray;
+            cursor: pointer;
+            width: max-content;
+        }
+
+        .percentage{
+            display: flex;
+            align-items: center;
+
+            &.positive{
+                color: green;
+            }
+
+            &.negative{
+                color: red;
+            }
+        }
+
+        .icon{
+            font-size: 36px;
+            padding: 5px;
+            border-radius: 5px;
+            align-self: flex-end;
+        }
+    }
+}

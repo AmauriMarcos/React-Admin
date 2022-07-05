@@ -1,0 +1,75 @@
+@import "../../styles/global.scss";
+
+.navbar{
+    display: flex;
+    align-items: center;
+    height: 51.6px;
+    border-bottom: 0.5px solid rgb(224, 224, 224);
+
+    .wrapper{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        align-items: center;
+        padding: 20px;
+
+        .search{
+            display: flex;
+            align-items: center;
+            border: 1px solid lightgray;
+            padding: 3px;
+
+            input{
+                border: none;
+                outline: none;
+                font-size: 17px;
+                background-color: transparent;
+            }
+
+            .icon{
+                font-size: 30px;
+            }
+        }
+
+        .items{
+            display: flex;
+            align-items: center;
+
+
+
+            .item{
+                display: flex;
+                align-items: center;
+                margin-right: 25px;
+                position: relative;
+
+                .icon{
+                    font-size: 27px;
+                    color: rgb(45, 45, 45);
+                  
+                }
+
+                .avatar{
+                    height: 45px;
+                    width: 45px;
+                    border-radius: 50%;
+                    object-fit: cover;
+                }
+
+                .counter{
+                    width:18px;
+                    height: 18px;
+                    border-radius: 50%;
+                    background-color: rgb(203, 57, 57);
+                    color: white;
+                    @include center-content;
+                    position: absolute;
+                    top: -3px;
+                    right: -3px;
+                    font-size: 12px;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}
