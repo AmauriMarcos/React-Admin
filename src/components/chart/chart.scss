@@ -1,0 +1,18 @@
+@import "../../styles/global.scss";
+
+.chart{
+    color: gray;
+    @include shadow;
+    flex: 5;
+    height: 464px;
+    padding: 15px 5px 10px 30px;
+    
+
+    .title{
+        @include title;
+    }
+
+    .chartGrid{
+        stroke: lightgrey;
+    }
+}

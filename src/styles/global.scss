@@ -1,7 +1,9 @@
 $base-color: #21B6D0;
 
+
+
 @mixin reset-list{
-    margin: 0;
+  margin: 0;
   padding: 0;
   list-style: none;
 }
@@ -10,4 +12,13 @@ $base-color: #21B6D0;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+@mixin shadow{
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+@mixin title{
+  color: rgb(179, 177, 177);
+  font-size: 20px;
 }
