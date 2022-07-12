@@ -1,8 +1,18 @@
 import { selectAllUsers } from "../../features/users/usersSlice";
 import { useSelector } from "react-redux";
+import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
+import PermIdentityIcon from '@mui/icons-material/PermIdentity';
+import {useNavigate} from 'react-router-dom';
+import { useEffect, useState } from "react";
 
 // My table's columns;
 export function useColumns() {
+  const navigate = useNavigate();
+
+  const handleSingleUser = (data) => {
+    navigate(`/users/${data.id}`)
+  }
+
   const columns = [
     { field: "id", headerName: "ID", width: 70 },
     {
@@ -36,6 +46,25 @@ export function useColumns() {
         );
       },
     },
+    {
+      field: "action",
+      headerName: "Action",
+      width: 240,
+      renderCell: (params) => {
+        return (
+          <div className="cellAction">
+            <button onClick={() => handleSingleUser(params)} className="viewButton">
+              <PermIdentityIcon className="icon"/>
+              <p>View</p>
+            </button>
+            <div className="deleteButton">
+              <DeleteOutlineIcon className="icon"/>
+              <p>Delete</p>
+            </div>
+          </div>
+        );
+      },
+    }
   ];
 
   return columns;
@@ -43,6 +72,7 @@ export function useColumns() {
 
 // My table's rows
 export function useRows() {
+  
   const users = useSelector(selectAllUsers);
   let userStatus;
 

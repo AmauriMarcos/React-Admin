@@ -8,8 +8,9 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
+import { getByTitle } from "@testing-library/react";
 
-const Chart = () => {
+const Chart = ({aspect, title}) => {
   const data = [
     { name: "Jan", total: 1250 },
     { name: "Feb", total: 2100 },
@@ -21,8 +22,8 @@ const Chart = () => {
 
   return (
     <div className="chart">
-      <h1 className="title">Last 6 months (Revenue)</h1>
-      <ResponsiveContainer width="100%" aspect={2/1}>
+      <h1 className="title">{title}</h1>
+      <ResponsiveContainer width="100%"  aspect={aspect}>
         <AreaChart
           width={730}
           height={250}
