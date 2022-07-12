@@ -1,3 +1,5 @@
+@import "../../styles/global.scss";
+
 .datatable{
    height: 720px;
    padding: 20px;
@@ -51,12 +53,13 @@
       }
 
       .viewButton{
-        border: 1px solid #5963ad;
-        color: #5963ad;
+        border: 1px solid $base-color;
+        color: $base-color;
+        background-color: transparent;
 
         &:hover{
+          background-color: #198da1;
           color: white;
-          background-color: #5963ad;
         }
       }
 

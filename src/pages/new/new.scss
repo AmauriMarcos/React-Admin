@@ -1,0 +1,126 @@
+@import "../../styles/global.scss";
+
+.new {
+  display: flex;
+
+  .newContainer {
+    flex: 6;
+  }
+
+  .newTop,
+  .newBottom {
+    @include shadow;
+    padding: 10px;
+    margin: 20px;
+  }
+
+  .newTop{
+
+    h1{
+      @include title;
+      text-align: center;
+      margin:10px;
+    }
+  }
+
+  .newBottom {
+    display: flex;
+
+    .left {
+      flex: 1;
+      @include center-content;
+
+      .imgStroke {
+        margin: 0 auto;
+        width: 170px;
+        height: 170px;
+        border-radius: 5px;
+        @include center-content;
+        border: 1px solid rgb(217, 217, 217);
+        padding: 3px;
+
+        img {
+          width: 150px;
+          height: 150px;
+          object-fit: cover;
+          border-radius: 50%;
+        }
+      }
+    }
+
+    .right {
+      flex: 2;
+
+      form {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+
+        .formInput {
+          display: flex;
+          width: 40%;
+          align-items: center;
+          flex-direction: column;
+          justify-content: space-around;
+
+          label{
+            align-self: flex-start;
+            margin-bottom: 5px;
+            font-size: 14px;
+          }
+
+          input{
+            padding: 7px 7px;
+            border-radius: 3px;
+            border: none;
+            background-color: transparent;
+            border-bottom: 1px solid rgb(186, 186, 186);
+            width: 100%;
+          }
+
+          ::placeholder{
+            font-size: 15px;
+          }
+
+          .addFile {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            gap: 10px;
+          }
+        }
+
+        .submitButton , .resetButton{
+            width: 20%;
+            padding: 8px 5px;
+            border: none;
+            background-color: $base-color;
+            font-weight: bold;
+            font-size: 15px;
+            color: whitesmoke;
+            cursor: pointer;
+            border-radius: 3px;
+            margin: 10px 0;
+            justify-self: flex-start;
+
+            &:hover{
+                background-color: #198da1;
+                color: white;
+            }
+        }
+
+        .resetButton{
+            background-color: rgb(190, 190, 190);
+            color: #fff;
+
+            
+            &:hover{
+                background-color: #909090;
+                color: white;
+            }
+        }
+      }
+    }
+  }
+}
