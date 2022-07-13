@@ -12,30 +12,39 @@ import PsychologyOutlinedIcon from "@mui/icons-material/PsychologyOutlined";
 import SettingsIcon from "@mui/icons-material/Settings";
 import FaceIcon from "@mui/icons-material/Face";
 import LogoutIcon from "@mui/icons-material/Logout";
+import {Link} from 'react-router-dom'
 
 const Sidebar = () => {
   return (
     <div className="sidebar">
       <div className="top">
-        <span className="logo">Admin</span>
+        <Link to="/">
+          <span className="logo">Admin</span>
+        </Link>
       </div>
       <hr />
       <div className="center">
         <ul>
           <p className="title">Main</p>
+          <Link to="/">
           <li>
             <DashboardIcon className="icon" />
             <span>Dashboard</span>
           </li>
+          </Link>
           <p className="title">Lists</p>
+          <Link to="/users">
           <li>
             <PersonOutlineOutlinedIcon className="icon" />
             <span>Users</span>
           </li>
+          </Link>
+          <Link to="/products">
           <li>
             <StoreIcon className="icon" />
             <span>Products</span>
           </li>
+          </Link>
           <li>
             <CreditCardIcon className="icon" />
             <span>Orders</span>

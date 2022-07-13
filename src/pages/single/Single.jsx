@@ -17,7 +17,7 @@ const Single = () => {
     dispatch(getUserByID(userId));
   }, [dispatch, userId]);
 
-  console.log(user);
+  
 
   return (
     <div className='single'>
@@ -29,7 +29,7 @@ const Single = () => {
                 <h1 className="title">Information</h1>
                 <button className="editButton">Edit</button>
                 <div className="item">
-                    <img src="https://images.unsplash.com/photo-1530785602389-07594beb8b73?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" alt="" className="itemImage" />
+                    <img src="https://classic.exame.com/wp-content/uploads/2021/05/WhatsApp-Image-2021-05-07-at-16.39.40.jpeg?quality=70&strip=info&w=1024" alt="" className="itemImage" />
                     <div className="details">
                       <h1 className="itemTitle">{user[0]?.name}</h1>
                       <div className="detailItem">

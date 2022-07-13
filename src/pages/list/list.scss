@@ -1,8 +1,35 @@
+@import "../../styles/global.scss";
+
 .list{
     display: flex;
     width: 100%;
 
     .listContainer{
         flex: 6;
+
+        .addBtn{
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin: 20px 0 5px 20px;
+
+            &:hover .icon, &:hover .title{
+                color: $base-color;
+            }
+         
+
+            .icon{
+                cursor: pointer;
+                color: rgb(179, 177, 177);
+              /*   color: $base-color; */
+            }
+
+            .title{
+                @include title;
+                cursor: pointer;
+                /* color: $base-color; */
+
+            }
+        }
     }
 }

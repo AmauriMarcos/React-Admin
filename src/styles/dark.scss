@@ -1,0 +1,250 @@
+@import "./global.scss";
+
+.app.dark {
+  background-color: #222;
+  color: rgb(156, 156, 156);
+
+  .chartGrid {
+    stroke: rgba(228, 228, 228, 0.219);
+  }
+
+  .sidebar {
+    .top {
+      .logo {
+        color: $base-color-dark;
+      }
+    }
+  }
+  .sidebar .center ul li .icon {
+    color: $base-color-dark;
+  }
+
+  .sidebar .center ul li:hover {
+    background-color: rgb(53, 53, 53);
+  }
+
+  .home .homeContainer .listContainer,
+  .single .singleContainer .bottom {
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+    background-color: rgb(53, 53, 53);
+    border-radius: 5px;
+  }
+
+  .single .singleContainer .top {
+    padding: 20px 25px;
+  }
+
+  .single .singleContainer .top .right {
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+    background-color: rgb(53, 53, 53);
+    border-radius: 5px;
+  }
+
+  .table {
+    background-color: rgb(71, 71, 71);
+  }
+
+  .table .tableCell {
+    color: rgba(250, 250, 250, 0.733);
+    border-bottom: 0.5px solid rgba(228, 228, 228, 0.219);
+  }
+
+  .table .status {
+    padding: 10px;
+    border-radius: 5px;
+
+    &.Approved {
+      color: rgb(118, 224, 118);
+      background-color: rgba(38, 236, 38, 0.151);
+    }
+    &.Pending {
+      color: rgb(242, 184, 38);
+      background-color: rgba(251, 251, 20, 0.226);
+    }
+  }
+
+  .single .singleContainer .top .left {
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+    background-color: rgb(53, 53, 53);
+    border-radius: 5px;
+  }
+
+  .single .singleContainer .top .left .item .details .itemTitle {
+    color: $base-color-dark;
+  }
+
+  .single .singleContainer .top .left .item .details .detailItem .itemKey {
+    color: $base-color-dark;
+  }
+
+  .widget,
+  .featured,
+  .newTop {
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+    background-color: rgb(53, 53, 53);
+    border-radius: 5px;
+  }
+
+  .sidebar {
+    border-right: 0.5px solid rgba(228, 228, 228, 0.219);
+  }
+
+  .navbar {
+    border-bottom: 0.5px solid rgba(228, 228, 228, 0.219);
+  }
+
+  .search {
+    border: 1px solid rgba(228, 228, 228, 0.219);
+  }
+
+  hr {
+    border: 0.5px solid rgba(228, 228, 228, 0.219);
+  }
+
+  .percentage {
+    display: flex;
+    align-items: center;
+
+    &.positive {
+      color: rgb(75, 163, 75);
+    }
+
+    &.negative {
+      color: rgb(227, 83, 83);
+    }
+  }
+
+  .featured .bottom .summary .item .itemResult.negative {
+    color: rgb(227, 83, 83);
+  }
+
+  .featured .bottom .summary .item .itemResult.positive {
+    color: rgb(75, 163, 75);
+  }
+
+  .navbar {
+    .item {
+      .icon {
+        font-size: 27px;
+        color: rgba(228, 228, 228, 0.416);
+      }
+    }
+  }
+
+  .new .newBottom .right form .submitButton {
+    background-color: $base-color-dark;
+    color: rgb(57, 57, 57);
+
+    &:hover {
+      background-color: #167f91;
+    }
+  }
+
+  .new .newBottom .right form .resetButton {
+    background-color: #575e5f;
+
+    &:hover {
+      background-color: #717a7b;
+    }
+  }
+
+  .new .newBottom .left .imgStroke {
+    border: 1px solid rgba(228, 228, 228, 0.219);
+  }
+
+  .new .newBottom .right form .formInput input {
+    border-bottom: 1px solid rgba(228, 228, 228, 0.219);
+  }
+
+  .datatable {
+    .datagrid {
+      color: rgba(208, 208, 208, 0.731);
+      border: none;
+
+      .status {
+        padding: 10px;
+        border-radius: 5px;
+        width: 80px;
+        text-align: center;
+
+        &.Active {
+          color: rgb(79, 230, 79);
+          background-color: transparent;
+        }
+        &.Inactive {
+          color: rgb(255, 134, 134);
+          background-color: transparent;
+        }
+      }
+    }
+
+    .cellAction {
+      .viewButton {
+        background-color: transparent;
+        border: none;
+        color: $base-color-dark;
+
+        &:hover {
+          background-color: transparent;
+          color: white;
+        }
+
+        .icon {
+          display: none;
+        }
+      }
+
+      .deleteButton {
+        background-color: transparent;
+        border: none;
+        color: rgb(239, 114, 114);
+
+        &:hover {
+          background-color: transparent;
+          color: white;
+        }
+
+        .icon {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .css-r11z79-MuiDataGrid-root
+    .MuiDataGrid-row:not(.MuiDataGrid-row--dynamicHeight)
+    > .MuiDataGrid-cell {
+    border-bottom: 1px solid rgba(228, 228, 228, 0.219);
+  }
+
+  .css-f3jnds-MuiDataGrid-columnHeaders{
+    border-bottom: 1px solid rgba(228, 228, 228, 0.219);
+  }
+  .css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root{
+    color: rgba(228, 228, 228, 0.219);
+  }
+
+  .list{
+
+    .listContainer{
+
+        .addBtn{
+
+            &:hover .icon, &:hover .title{
+                color: $base-color-dark;
+            }
+        }
+    }
+  }
+
+
+  .sidebar{
+
+    .bottom{
+
+        .colorOption{
+            border: 1px solid gray;
+        }
+    }
+  }
+}

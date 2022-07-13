@@ -5,22 +5,26 @@ import Single from "./pages/single/Single";
 import New from "./pages/new/New";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { productInputs, userInputs } from "./formSource";
+import './styles/dark.scss';
+import {useSelector} from 'react-redux';
+import {selectTheme} from './features/adminSettings/adminSlice';
 
 function App() {
+  const isDarkMode = useSelector(selectTheme);
   return (
-    <div className="App">
+    <div className={isDarkMode ? 'app dark' : 'app'}>
       <BrowserRouter>
         <Routes>
           <Route path="/">
             <Route index element={<Home/>} />
             <Route path="login" element={<Login/>} />
             <Route path="users">
-              <Route index element={<List/>} />
+              <Route index element={<List title="Add User" url="/users/new"/>} />
               <Route path=":userId" element={<Single/>} />
               <Route path="new" element={<New inputs={userInputs} title="Add New User"/>} />
             </Route>
             <Route path="products">
-              <Route index element={<List/>} />
+              <Route index element={<List title="Add Product" url="/products/new"/>} />
               <Route path=":productId" element={<Single/>} />
               <Route path="new" element={<New inputs={productInputs} title="Add New Product"/>} />
             </Route>

@@ -4,8 +4,12 @@ import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+import {useSelector} from 'react-redux';
+import {selectTheme} from '../../features/adminSettings/adminSlice';
 
 const Featured = () => {
+  const isDarkMode = useSelector(selectTheme);
   const percentage = 66;
   return (
     <div className="featured">
@@ -19,8 +23,9 @@ const Featured = () => {
             value={percentage} 
             text={`${percentage}%`} 
             styles={buildStyles({
-              pathColor: "#21B6D0",
-              textColor: "#21B6D0"
+              pathColor: isDarkMode ? " #e2cda7": "#21B6D0",
+              textColor: isDarkMode ? " #e2cda7": "#21B6D0",
+              trailColor: isDarkMode ? " #444444": "#e5e5e5",
             })}
           />
         </div>
@@ -31,7 +36,7 @@ const Featured = () => {
           <div className="item">
             <div className="itemTitle">Target</div>
             <div className="itemResult positive">
-               <KeyboardArrowDownIcon/>
+               <KeyboardArrowUpIcon/>
                <div className="resultAmount ">$12.5k</div>
             </div>
           </div>
@@ -39,7 +44,7 @@ const Featured = () => {
           <div className="item">
             <div className="itemTitle">Target</div>
             <div className="itemResult  positive" >
-               <KeyboardArrowDownIcon/>
+               <KeyboardArrowUpIcon/>
                <div className="resultAmount">$12.5k</div>
             </div>
           </div>

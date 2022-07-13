@@ -15,10 +15,6 @@ const DataTable = () => {
   }, [dispatch]);
 
 
-/*   const actionColumn = {
-   
-  }; */
-
 
   const rows = useRows();
   const columns = useColumns();
@@ -27,6 +23,7 @@ const DataTable = () => {
   return (
     <div className="datatable">
       <DataGrid
+        className="datagrid"
         rows={rows}
         columns={columns/* .concat(actionColumn) */}
         pageSize={10}

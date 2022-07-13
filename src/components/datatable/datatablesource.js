@@ -90,7 +90,7 @@ export function useRows() {
       firstName: user.name.split(" ")[0],
       lastName: user.name.split(" ")[1],
       email: user.email,
-      avatar: "https://cdn-icons-png.flaticon.com/512/733/733609.png",
+      avatar: "https://play.nintendo.com/images/profile-mk-mario.7bf2a8f2.png",
       username: user.username,
       status: userStatus,
     };

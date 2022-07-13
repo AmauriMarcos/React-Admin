@@ -3,9 +3,12 @@ import "./new.scss";
 import Sidebar from "../../components/sidebar/Sidebar";
 import Navbar from "../../components/navbar/Navbar";
 import DriveFolderUploadIcon from "@mui/icons-material/DriveFolderUpload";
+import {useSelector} from 'react-redux';
+import {selectTheme} from '../../features/adminSettings/adminSlice';
 
 const New = ({ inputs, title }) => {
   const [file, setFile] = useState('');
+  const isDarkMode = useSelector(selectTheme);
  
   const handleFileUpload = (e) => {
     if(e.target.files.length !== 0){
@@ -37,7 +40,7 @@ const New = ({ inputs, title }) => {
                 <label className="addFile" htmlFor="username">
                   <DriveFolderUploadIcon
                     fontSize="large"
-                    sx={{ color: "#21B6D0" }}
+                    sx={{ color: isDarkMode ? " #e2cda7": "#21B6D0" }}
                   />
                   Add a file
                 </label>

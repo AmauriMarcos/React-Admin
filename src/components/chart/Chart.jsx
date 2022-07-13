@@ -8,9 +8,12 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
-import { getByTitle } from "@testing-library/react";
+import {useSelector} from 'react-redux';
+import {selectTheme} from '../../features/adminSettings/adminSlice';
 
 const Chart = ({aspect, title}) => {
+  const isDarkMode = useSelector(selectTheme);
+
   const data = [
     { name: "Jan", total: 1250 },
     { name: "Feb", total: 2100 },
@@ -32,8 +35,8 @@ const Chart = ({aspect, title}) => {
         >
           <defs>
             <linearGradient id="total" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="5%" stopColor="#21B6D0" stopOpacity={0.8} />
-              <stop offset="95%" stopColor="#21B6D0" stopOpacity={0} />
+              <stop offset="5%" stopColor={isDarkMode ? " #e2cda7": "#21B6D0"} stopOpacity={0.8} />
+              <stop offset="95%" stopColor={isDarkMode ? " #e2cda7": "#21B6D0"} stopOpacity={0} />
             </linearGradient>
           </defs>
           <XAxis dataKey="name" stroke="gray"/>
@@ -42,7 +45,7 @@ const Chart = ({aspect, title}) => {
           <Area
             type="monotone"
             dataKey="total"
-            stroke="#21B6D0"
+            stroke={isDarkMode ? " #e2cda7": "#21B6D0"}
             fillOpacity={1}
             fill="url(#total)"
           />

@@ -12,22 +12,26 @@
         width: 100%;
         align-items: center;
         padding: 20px;
+       
 
         .search{
             display: flex;
             align-items: center;
             border: 1px solid lightgray;
-            padding: 3px;
+            padding: 3px 15px;
+            border-radius: 20px;
 
             input{
                 border: none;
                 outline: none;
-                font-size: 17px;
+                font-size: 15px;
                 background-color: transparent;
+                color: $base-color;
+               
             }
 
             .icon{
-                font-size: 30px;
+                font-size: 25px;
             }
         }
 
@@ -45,8 +49,7 @@
 
                 .icon{
                     font-size: 27px;
-                    color: rgb(45, 45, 45);
-                  
+                    color: rgb(45, 45, 45);                
                 }
 
                 .avatar{
