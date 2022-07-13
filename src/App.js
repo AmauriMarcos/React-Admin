@@ -11,8 +11,9 @@ import {selectTheme} from './features/adminSettings/adminSlice';
 
 function App() {
   const isDarkMode = useSelector(selectTheme);
+
   return (
-    <div className={isDarkMode ? 'app dark' : 'app'}>
+    <div className={isDarkMode  ? 'app dark' : 'app'}>
       <BrowserRouter>
         <Routes>
           <Route path="/">

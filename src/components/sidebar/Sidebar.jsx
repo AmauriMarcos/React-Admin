@@ -13,8 +13,20 @@ import SettingsIcon from "@mui/icons-material/Settings";
 import FaceIcon from "@mui/icons-material/Face";
 import LogoutIcon from "@mui/icons-material/Logout";
 import {Link} from 'react-router-dom'
+import { useDispatch, useSelector} from 'react-redux';
+import { nightTheme, lightTheme, toggleTheme} from '../../features/adminSettings/adminSlice';
 
 const Sidebar = () => {
+  const dispatch = useDispatch();
+
+  const handleDarkTheme = () => {
+    dispatch(nightTheme());
+  }
+
+  const handleBrightTheme = () => {
+    dispatch(lightTheme())
+    }
+  
   return (
     <div className="sidebar">
       <div className="top">
@@ -89,8 +101,8 @@ const Sidebar = () => {
       </div>
 
       <div className="bottom">
-        <div className="colorOption"></div>
-        <div className="colorOption"></div>
+        <div  onClick={handleBrightTheme} className="colorOption"></div>
+        <div  onClick={handleDarkTheme} className="colorOption"></div>
       </div>
       
     </div>

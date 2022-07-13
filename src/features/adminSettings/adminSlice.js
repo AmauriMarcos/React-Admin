@@ -1,7 +1,7 @@
 import {createSlice} from '@reduxjs/toolkit';
 
 const initialState = {
-    darkMode: false
+    darkTheme: false,
 }
 
 const adminSlice = createSlice({
@@ -9,11 +9,18 @@ const adminSlice = createSlice({
     initialState,
     reducers: {
         toggleTheme(state){
-            state.darkMode = !state.darkMode
+            state.darkTheme= !state.darkTheme
+        },
+        nightTheme(state){
+            state.darkTheme = true;
+        },
+        lightTheme(state){
+            state.darkTheme = false;
         }
     }
 });
 
-export const selectTheme = (state) => state.admin.darkMode;
+export const selectTheme = (state) => state.admin.darkTheme;
+
 export default adminSlice.reducer;
-export const {toggleTheme} = adminSlice.actions;
+export const {toggleTheme, nightTheme, lightTheme} = adminSlice.actions;
