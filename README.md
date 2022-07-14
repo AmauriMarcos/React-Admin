@@ -1,70 +1,53 @@
-# Getting Started with Create React App
+<p align="center" width="100%">
+  <img src="images/react-banner-yellow.png"/>
+</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## About the project
 
-## Available Scripts
+That's a great project for people who's trying to improve their design skills. 
+You can easily integrate your own database and manage the users and products from there. 
 
-In the project directory, you can run:
 
-### `npm start`
+![npm](https://img.shields.io/npm/v/react?color=%23007ec6&label=React&logo=React&style=for-the-badge)
+![npm](https://img.shields.io/npm/v/react-redux?color=%23007ec6&label=Redux&logo=Redux&style=for-the-badge)
+![npm](https://img.shields.io/npm/v/react-router-dom?label=React%20Router%20Dom&logo=React%20Router&style=for-the-badge)
+![GitHub watchers](https://img.shields.io/github/watchers/AmauriMarcos/React-Admin?logo=Github&style=for-the-badge)
+![GitHub Repo stars](https://img.shields.io/github/stars/AmauriMarcos/React-Admin?logo=Github&style=for-the-badge)
+![GitHub last commit (branch)](https://img.shields.io/github/last-commit/AmauriMarcos/React-Admin/main?color=%23007EC6&logo=Git&style=for-the-badge)
+![GitHub repo size](https://img.shields.io/github/repo-size/AmauriMarcos/React-Admin?logo=github&style=for-the-badge)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<p align="center" width="100%"> 
+  <img src="images/admin.png" width="700px"/>
+</p>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Installation
 
-### `npm test`
+1. Clone the repo
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+   ```
+   git clone https://github.com/AmauriMarcos/React-Admin.git
+   ```
 
-### `npm run build`
+2. Install NPM packages
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+   ```
+   npm install
+   ```
+   
+3. Go to the project folder
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+   ```
+    cd React-Admin
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+4. Start the project
 
-### `npm run eject`
+   ```
+   npm start
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## References
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+  I would like to say  <strong>Thank You</strong> to LamaDev. 
+  He is helping me and others to improve as web developers. The React-Admin is one of his many projects and I glad that I went
+  througt it because I've learned a lot. Cheers man ! 
