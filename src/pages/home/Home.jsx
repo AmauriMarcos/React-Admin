@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import Sidebar from '../../components/sidebar/Sidebar';
 import './home.scss';
 import Navbar from '../../components/navbar/Navbar';
@@ -8,6 +8,7 @@ import Chart from '../../components/chart/Chart';
 import Table from '../../components/table/Table';
 
 const Home = () => {
+  
   return (
     <div className='home'>
         <Sidebar/>
@@ -23,10 +24,10 @@ const Home = () => {
             <Featured/>
             <Chart aspect={2/1} title="Last 6 months (Revenue)"/>
           </div>
-          <div className="listContainer">
+          {/* <div className="listContainer">
               <h1 className="listTitle">Latest Transactions</h1>
               <Table/>
-          </div>
+          </div> */}
         </div>
     </div>
   )

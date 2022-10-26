@@ -1,45 +1,53 @@
-import { useEffect, useState } from "react";
+import { useEffect} from "react";
 import "./datatable.scss";
 import { DataGrid } from "@mui/x-data-grid";
-import { useDispatch } from "react-redux";
-import { getUsers } from "../../features/users/usersSlice";
-import { useColumns, useRows } from "./datatablesource";
+import { useDispatch} from "react-redux";
+import { getAllUsers } from "../../features/users/usersSlice";
+import { useUserColumns, usePropertyColumns, useUserRows, usePropertyRows, useRoomColumns, useRoomRows } from "./datatablesource";
 
-
-const DataTable = () => {
+const DataTable = ({table}) => {
   const dispatch = useDispatch();
-
-
+ 
   useEffect(() => {
-    dispatch(getUsers());
+    dispatch(getAllUsers());
   }, [dispatch]);
 
+  //Columns
+  const userColumns = useUserColumns();
+  const propertyColumns = usePropertyColumns();
+  const roomColumns = useRoomColumns();
 
+  //Rows
+  const userRows = useUserRows();
+  const propertyRows = usePropertyRows();
+  const roomRows = useRoomRows();
 
-  const rows = useRows();
-  const columns = useColumns();
+  let pathColumn;
+  let pathRow;
 
+  function handleTables(typeOfTableColumn, typeOfTableRow){
+    pathColumn = typeOfTableColumn;
+    pathRow = typeOfTableRow;
+    return [pathColumn, pathRow];
+  }
 
+  if(table === 'userTable'){
+    handleTables(userColumns, userRows);
+  }else if(table === 'propertyTable'){
+    handleTables(propertyColumns, propertyRows);
+  }else if (table === 'roomTable') {
+    handleTables(roomColumns, roomRows);
+  }
+  
   return (
     <div className="datatable">
       <DataGrid
         className="datagrid"
-        rows={rows}
-        columns={columns/* .concat(actionColumn) */}
+        rows={pathRow}
+        columns={pathColumn}
         pageSize={10}
         rowsPerPageOptions={[10]}
         checkboxSelection
-    /*     onSelectionModelChange={(ids) => {
-          const selectedIDs =  new Set(ids);
-      
-          const selectedRows = rows.filter((row) =>
-       
-            selectedIDs.has(row.id),
-           
-          );
-
-          setUserId(selectedRows);
-        }} */
       />
     </div>
   );

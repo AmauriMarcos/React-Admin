@@ -23,8 +23,8 @@ const Featured = () => {
             value={percentage} 
             text={`${percentage}%`} 
             styles={buildStyles({
-              pathColor: isDarkMode ? " #e2cda7": "#21B6D0",
-              textColor: isDarkMode ? " #e2cda7": "#21B6D0",
+              pathColor: isDarkMode ? " #e2cda7": "#003580",
+              textColor: isDarkMode ? " #e2cda7": "#003580",
               trailColor: isDarkMode ? " #444444": "#e5e5e5",
             })}
           />

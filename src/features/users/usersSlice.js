@@ -1,21 +1,51 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-export const getUsers = createAsyncThunk("users/getUsers", async () => {
-  const res = await axios("https://jsonplaceholder.typicode.com/users");
-  return res.data;
-});
-
-export const getUserByID = createAsyncThunk("users/getUserByID", async (id) => {
-  const res = await axios(`https://jsonplaceholder.typicode.com/users?id=${id}`)
-  return res.data;
-});
-
 const initialState = {
   users: [],
   loading: false,
   error: null,
 };
+
+//GET USERS
+//Get all 
+export const getAllUsers = createAsyncThunk("properties/getAllUsers", async () => {
+
+  try{
+      const res = await axios.get(`http://localhost:8000/api/users`);
+      return res.data
+    }catch(error){
+      console.log(error.response);
+    }
+});
+
+export const getUserByID = createAsyncThunk("users/getUserByID", async (id, { rejectWithValue }) => {
+
+  try{
+    const res = await axios.get(`http://localhost:8000/api/users/view/${id}`);
+    return res.data;
+    
+  }catch(err){
+    console.log(err.response.data)
+    return rejectWithValue(err.response.data)
+  }
+  
+});
+
+//Delete User
+export const deleteUser = createAsyncThunk("users/deleteUser", async (id, { rejectWithValue }) => {
+
+  try{
+    const res = await axios.delete(`http://localhost:8000/api/users/${id}`);
+    return res.data;
+    
+  }catch(err){
+    console.log(err.response);
+    return rejectWithValue(err.response.data);
+  }
+  
+});
+
 
 const usersSlice = createSlice({
   name: "users",
@@ -23,15 +53,15 @@ const usersSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(getUsers.pending, (state) => {
+      .addCase(getAllUsers.pending, (state) => {
         state.loading = true;
       })
-      .addCase(getUsers.fulfilled, (state, { payload }) => {
+      .addCase(getAllUsers.fulfilled, (state, { payload }) => {
         state.loading = false;
         state.users = payload;
         state.error = null;
       })
-      .addCase(getUsers.rejected, (state) => {
+      .addCase(getAllUsers.rejected, (state) => {
         state.loading = false;
         state.error = "Something went wrong";
       })
@@ -46,10 +76,22 @@ const usersSlice = createSlice({
       .addCase(getUserByID.rejected, (state) => {
         state.loading = false;
         state.error = "Something went wrong";
-      });
-
+      })
+      .addCase(deleteUser.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(deleteUser.fulfilled, (state, { payload }) => {
+        state.loading = false;
+        state.users = state.users.filter((user) => {
+          return user.id !== payload
+        });
+        state.error = null;
+      })
+      .addCase(deleteUser.rejected, (state) => {
+        state.loading = false;
+        state.error = "Something went wrong";
+      })
   },
 });
 
-export const selectAllUsers = (state) => state.users.users;
 export default usersSlice.reducer;

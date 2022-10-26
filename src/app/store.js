@@ -2,13 +2,42 @@ import { configureStore } from '@reduxjs/toolkit'
 import productReducer from '../features/products/productsSlice';
 import userReducer from '../features/users/usersSlice';
 import adminReducer from '../features/adminSettings/adminSlice';
+import authReducer from '../features/authSlice';
+import propertyReducer from '../features/propertiesSlice';
+import roomReducer from '../features/roomsSlice';
 
- const store = configureStore({
+import {
+  persistStore,
+  persistReducer,
+  FLUSH,
+  REHYDRATE,
+  PAUSE,
+  PERSIST,
+  PURGE,
+  REGISTER,
+} from 'redux-persist';
+
+import storage from 'redux-persist/lib/storage';
+
+  const persistConfig = {
+    key: 'root',
+    version: 1,
+    storage,
+  }
+
+const persistedReducer = persistReducer(persistConfig, authReducer);
+
+export const store = configureStore({
     reducer: {
       products: productReducer,
       users: userReducer,
       admin: adminReducer,
-    }
-})
-
-export default store;
+      property: propertyReducer,
+      auth: persistedReducer, 
+      room: roomReducer,
+    },
+    middleware: (getDefaultMiddleware) =>
+      getDefaultMiddleware({
+        serializableCheck: false
+      }),
+  });

@@ -8,10 +8,13 @@ import LocalShippingIcon from "@mui/icons-material/LocalShipping";
 import InsertChartIcon from "@mui/icons-material/InsertChart";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import MonitorHeartIcon from "@mui/icons-material/MonitorHeart";
+import BedIcon from '@mui/icons-material/Bed';
+import HomeWorkIcon from '@mui/icons-material/HomeWork';
 import PsychologyOutlinedIcon from "@mui/icons-material/PsychologyOutlined";
 import SettingsIcon from "@mui/icons-material/Settings";
 import FaceIcon from "@mui/icons-material/Face";
 import LogoutIcon from "@mui/icons-material/Logout";
+import { logout } from "../../features/authSlice";
 import {Link} from 'react-router-dom'
 import { useDispatch, useSelector} from 'react-redux';
 import { nightTheme, lightTheme, toggleTheme} from '../../features/adminSettings/adminSlice';
@@ -27,11 +30,16 @@ const Sidebar = () => {
     dispatch(lightTheme())
     }
   
+
+  const handleLogout = () => {
+    dispatch(logout());
+    
+  }
   return (
     <div className="sidebar">
       <div className="top">
         <Link to="/">
-          <span className="logo">Admin</span>
+          <span className="logo">Booking Admin</span>
         </Link>
       </div>
       <hr />
@@ -53,18 +61,16 @@ const Sidebar = () => {
           </Link>
           <Link to="/products">
           <li>
-            <StoreIcon className="icon" />
-            <span>Products</span>
+            <HomeWorkIcon className="icon" />
+            <span>Properties</span>
           </li>
           </Link>
+          <Link to="/rooms">
           <li>
-            <CreditCardIcon className="icon" />
-            <span>Orders</span>
+            <BedIcon className="icon" />
+            <span>Rooms</span>
           </li>
-          <li>
-            <LocalShippingIcon className="icon" />
-            <span>Delivery</span>
-          </li>
+          </Link>
           <p className="title">Useful</p>
           <li>
             <InsertChartIcon className="icon" />
@@ -93,10 +99,10 @@ const Sidebar = () => {
             <span>Profile</span>
           </li>
 
-          <li>
+          <a type='button' onClick={handleLogout}>
             <LogoutIcon className="icon" />
             <span>Logout</span>
-          </li>
+          </a>
         </ul>
       </div>
 
