@@ -22,8 +22,7 @@ const New = ({ inputs, title }) => {
   }
 
   const handleInputChange = (e) => {
-    //const name = e.target.name 
-    //const value = e.target.value 
+ 
       const { name, value } = e.target;
 
       setValues({
@@ -49,7 +48,7 @@ const New = ({ inputs, title }) => {
 
     }catch(err){
       throw err;
-      console.log(err);
+      
     }
   }
  

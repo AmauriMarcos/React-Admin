@@ -12,12 +12,12 @@ const DataTable = ({table}) => {
     dispatch(getAllUsers());
   }, [dispatch]);
 
-  //Columns
+
   const userColumns = useUserColumns();
   const propertyColumns = usePropertyColumns();
   const roomColumns = useRoomColumns();
 
-  //Rows
+
   const userRows = useUserRows();
   const propertyRows = usePropertyRows();
   const roomRows = useRoomRows();

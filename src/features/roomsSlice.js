@@ -16,7 +16,7 @@ const config = {
     withCredentials: true
 }
 
-//Get all rooms
+
 export const getAllRooms = createAsyncThunk("room/getAllRooms", async () => {
     try {
         const res = await axios.get(`http://localhost:8000/api/rooms`);
@@ -27,7 +27,6 @@ export const getAllRooms = createAsyncThunk("room/getAllRooms", async () => {
 });
 
 
-//Get room by hotel ID
 export const getRoomByHotelID = createAsyncThunk("room/getRoomByHotelID", async (id, { rejectWithValue }) => {
     try {
         const res = await axios.get(`http://localhost:8000/api/rooms/${id}`);
@@ -40,7 +39,7 @@ export const getRoomByHotelID = createAsyncThunk("room/getRoomByHotelID", async 
 });
 
 
-//Update Rooms
+
 export const updateRoom = createAsyncThunk(
     "room/updateRoom",
     async (reservation) => {

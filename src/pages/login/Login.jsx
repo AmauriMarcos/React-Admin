@@ -1,26 +1,18 @@
-import React, { useEffect } from "react";
-/* import Navbar from "../../components/navbar/Navbar"; */
+import React from "react";
 import { useDispatch, useSelector } from 'react-redux';
-import { getUser, login } from '../../features/authSlice';
+import { login } from '../../features/authSlice';
 import './login.css';
 import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
   const navigate = useNavigate();
-  /* const locationID = useSelector((state) => state.search.locationID); */
+
   const dispatch = useDispatch();
   const user = useSelector((state) => state.auth.user);
   const [username, setUsername] = React.useState("");
   const [password, setPassword] = React.useState("");
 
-  /*   useEffect(() => {
-      if(user?.isAdmin === 1){
-        navigate(`/`);
-      }else{
-        navigate('/login');
-      } 
-    }, [user]) */
-
+ 
   const handleSubmit = (e) => {
     e.preventDefault();
     try {
@@ -41,7 +33,7 @@ const Login = () => {
 
   return (
     <div className="login">
-      {/*  <Navbar /> */}
+      
       <div className="loginContainer">
         <h2 className="title">Sign In</h2>
         <form className="form" >

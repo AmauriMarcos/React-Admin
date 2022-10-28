@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+/* import React, {useEffect} from "react";
 import "./table.scss";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -50,12 +50,7 @@ const List = ({propertyId}) => {
             <TableRow key={row.id}>
               <TableCell className="tableCell">{row.id}</TableCell>
               <TableCell className="tableCell">{row.room}</TableCell>
-            {/*   <TableCell className="tableCell">
-                <div className="cellWrapper">
-                  <img src={row.img} alt="" className="image" />
-                  {row.product}
-                </div>
-              </TableCell> */}
+      
               <TableCell className="tableCell">{row.roomType}</TableCell>
               <TableCell className="tableCell">{row.maxPeople}</TableCell>
               <TableCell className="tableCell">{row.includes}</TableCell>
@@ -68,9 +63,7 @@ const List = ({propertyId}) => {
                 : '-'}               
               </TableCell>
               <TableCell className="tableCell">EUR {row.price}</TableCell>
-              {/* <TableCell className={`tableCell `}>
-                <span className={`status ${row.status}`}>{row.status}</span>
-              </TableCell> */}
+            
             </TableRow>
           ))}
         </TableBody>
@@ -80,3 +73,4 @@ const List = ({propertyId}) => {
 };
 
 export default List;
+ */

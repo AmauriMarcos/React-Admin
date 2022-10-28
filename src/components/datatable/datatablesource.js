@@ -10,7 +10,7 @@ import { getAllRooms } from '../../features/roomsSlice';
 import Moment from 'react-moment';
 import 'moment-timezone';
 
-// User columns;
+
 export function useUserColumns() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -66,7 +66,7 @@ export function useUserColumns() {
   return columns;
 }
 
-//Property columns
+
 export function usePropertyColumns() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -122,7 +122,7 @@ export function usePropertyColumns() {
   return columns;
 }
 
-//Rooms columns
+
 export function useRoomColumns() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -187,7 +187,6 @@ export function useRoomColumns() {
 }
 
 
-// User rows
 export function useUserRows() {
 
   let userStatus;
@@ -221,7 +220,6 @@ export function useUserRows() {
   return rows;
 }
 
-//Property rows
 export function usePropertyRows() {
 
   const dispatch = useDispatch();
@@ -249,7 +247,6 @@ export function usePropertyRows() {
   return rows;
 }
 
-//Rooms rows
 export function useRoomRows() {
 
   const dispatch = useDispatch();

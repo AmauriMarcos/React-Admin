@@ -10,7 +10,7 @@ const initialState = {
 };
 
 
-//USER REGISTER
+
 export const register = createAsyncThunk("auth/register", async (data) => {
 
   try {
@@ -21,7 +21,7 @@ export const register = createAsyncThunk("auth/register", async (data) => {
   }
 });
 
-//USER LOGIN
+
 export const login = createAsyncThunk("auth/login", async(data, { rejectWithValue }) => {
   
   const config = {
@@ -41,7 +41,7 @@ export const login = createAsyncThunk("auth/login", async(data, { rejectWithValu
   }
 });
 
-//GET AUTHENTICATED USER
+
 export const getUser = createAsyncThunk("auth/getUser", async (id) => {
   console.log(id)
   const config = {

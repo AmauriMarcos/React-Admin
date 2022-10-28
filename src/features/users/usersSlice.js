@@ -7,8 +7,6 @@ const initialState = {
   error: null,
 };
 
-//GET USERS
-//Get all 
 export const getAllUsers = createAsyncThunk("properties/getAllUsers", async () => {
 
   try{
@@ -18,6 +16,7 @@ export const getAllUsers = createAsyncThunk("properties/getAllUsers", async () =
       console.log(error.response);
     }
 });
+
 
 export const getUserByID = createAsyncThunk("users/getUserByID", async (id, { rejectWithValue }) => {
 
@@ -32,7 +31,7 @@ export const getUserByID = createAsyncThunk("users/getUserByID", async (id, { re
   
 });
 
-//Delete User
+
 export const deleteUser = createAsyncThunk("users/deleteUser", async (id, { rejectWithValue }) => {
 
   try{
