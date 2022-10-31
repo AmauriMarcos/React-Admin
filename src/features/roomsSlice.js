@@ -19,7 +19,7 @@ const config = {
 
 export const getAllRooms = createAsyncThunk("room/getAllRooms", async () => {
     try {
-        const res = await axios.get(`http://localhost:8000/api/rooms`);
+        const res = await axios.get(`http://ec2-54-167-89-197.compute-1.amazonaws.com/api/rooms`);
         return res.data
     } catch (error) {
         console.log(error.response);
@@ -29,7 +29,7 @@ export const getAllRooms = createAsyncThunk("room/getAllRooms", async () => {
 
 export const getRoomByHotelID = createAsyncThunk("room/getRoomByHotelID", async (id, { rejectWithValue }) => {
     try {
-        const res = await axios.get(`http://localhost:8000/api/rooms/${id}`);
+        const res = await axios.get(`http://ec2-54-167-89-197.compute-1.amazonaws.com/api/rooms/${id}`);
         return res.data;
 
     } catch (err) {
@@ -47,7 +47,7 @@ export const updateRoom = createAsyncThunk(
         console.log(reservation);
         try {
             const res = await axios.put(
-                `http://localhost:8000/api/rooms/${room}`, {
+                `http://ec2-54-167-89-197.compute-1.amazonaws.com/api/rooms/${room}`, {
                 data: reservation
             },
                 config

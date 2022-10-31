@@ -12,7 +12,7 @@ const initialState = {
 
 export const createProperty = createAsyncThunk("properties/createProperty", async (data) => {
   try {
-    const response = await axios.post("http://localhost:8000/api/properties", data );
+    const response = await axios.post("http://ec2-54-167-89-197.compute-1.amazonaws.com/api/properties", data );
     return response.data;
   } catch (error) {
     console.log(error.response);
@@ -23,7 +23,7 @@ export const createProperty = createAsyncThunk("properties/createProperty", asyn
 export const getProperty= createAsyncThunk("properties/getProperty", async (id) => {
   console.log(id);
   try{
-    const res = await axios.get(`http://localhost:8000/api/properties/${id}`);
+    const res = await axios.get(`http://ec2-54-167-89-197.compute-1.amazonaws.com/api/properties/${id}`);
     return res.data
   }catch(error){
     console.log(error.response);
@@ -34,7 +34,7 @@ export const getProperty= createAsyncThunk("properties/getProperty", async (id) 
 export const getSelectedProperty = createAsyncThunk("users/getSelectedProperty", async (id, { rejectWithValue }) => {
   let newId = +id
   try{
-    const res = await axios.get(`http://localhost:8000/api/properties/view/${newId}`);
+    const res = await axios.get(`http://ec2-54-167-89-197.compute-1.amazonaws.com/api/properties/view/${newId}`);
     console.log(res.data);
     return res.data;
     
@@ -49,7 +49,7 @@ export const getSelectedProperty = createAsyncThunk("users/getSelectedProperty",
 export const getAllProperties = createAsyncThunk("properties/getAllProperties", async () => {
 
   try{
-      const res = await axios.get(`http://localhost:8000/api/properties/all`);
+      const res = await axios.get(`http://ec2-54-167-89-197.compute-1.amazonaws.com/api/properties/all`);
       return res.data
     }catch(error){
       console.log(error.response);
@@ -59,7 +59,7 @@ export const getAllProperties = createAsyncThunk("properties/getAllProperties", 
 
 export const deleteProperty = createAsyncThunk("properties/deleteProperty", async (id) => {
   try{
-    const res = await axios.delete(`http://localhost:8000/api/properties/${id}`);
+    const res = await axios.delete(`http://ec2-54-167-89-197.compute-1.amazonaws.com/api/properties/${id}`);
     return res.data
   }catch(error){
     console.log(error.response);

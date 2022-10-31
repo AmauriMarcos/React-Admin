@@ -14,7 +14,7 @@ const initialState = {
 export const register = createAsyncThunk("auth/register", async (data) => {
 
   try {
-    const response = await axios.post("http://localhost:8000/api/auth/register", data, { withCredentials: true} );
+    const response = await axios.post("http://ec2-54-167-89-197.compute-1.amazonaws.com/api/auth/register", data, { withCredentials: true} );
     return response.data;
   } catch (error) {
     console.log(error.response);
@@ -32,7 +32,7 @@ export const login = createAsyncThunk("auth/login", async(data, { rejectWithValu
     }
 
   try{
-    const res = await axios.post(`http://localhost:8000/api/auth/login`, data, config);
+    const res = await axios.post(`http://ec2-54-167-89-197.compute-1.amazonaws.com/api/auth/login`, data, config);
     return res.data;
 
   }catch(err){
@@ -52,7 +52,7 @@ export const getUser = createAsyncThunk("auth/getUser", async (id) => {
     }
  
     try {
-      const response = await axios.get(`http://localhost:8000/api/users/${id}`, config);
+      const response = await axios.get(`http://ec2-54-167-89-197.compute-1.amazonaws.com/api/users/${id}`, config);
       return response.data;
     } catch (error) {
       console.log(error);

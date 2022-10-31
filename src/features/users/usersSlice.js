@@ -10,7 +10,7 @@ const initialState = {
 export const getAllUsers = createAsyncThunk("properties/getAllUsers", async () => {
 
   try{
-      const res = await axios.get(`http://localhost:8000/api/users`);
+      const res = await axios.get(`http://ec2-54-167-89-197.compute-1.amazonaws.com:8000/api/users`);
       return res.data
     }catch(error){
       console.log(error.response);
@@ -21,7 +21,7 @@ export const getAllUsers = createAsyncThunk("properties/getAllUsers", async () =
 export const getUserByID = createAsyncThunk("users/getUserByID", async (id, { rejectWithValue }) => {
 
   try{
-    const res = await axios.get(`http://localhost:8000/api/users/view/${id}`);
+    const res = await axios.get(`http://ec2-54-167-89-197.compute-1.amazonaws.com/api/users/view/${id}`);
     return res.data;
     
   }catch(err){
@@ -35,7 +35,7 @@ export const getUserByID = createAsyncThunk("users/getUserByID", async (id, { re
 export const deleteUser = createAsyncThunk("users/deleteUser", async (id, { rejectWithValue }) => {
 
   try{
-    const res = await axios.delete(`http://localhost:8000/api/users/${id}`);
+    const res = await axios.delete(`http://ec2-54-167-89-197.compute-1.amazonaws.com/api/users/${id}`);
     return res.data;
     
   }catch(err){
